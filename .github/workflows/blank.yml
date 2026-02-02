@@ -6,5 +6,8 @@ jobs:  # In a workflow, we can have multiple jobs, but here we will have only on
     steps:
       - name: Hello Step  # Once again any random name, and what step should it run, will be in the next line
         run: echo "Hello World" # So, here it will just echo/print out the statement thats it
-        
-      
+      - name : Multiple Command
+        run: | # So, here multiple command can be executed by usign the pipe command/symbol
+          echo "This is the first message of multiple command execution"
+          echo "This is the second message of multiple command execution"
+
