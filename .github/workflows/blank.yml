@@ -1,0 +1,10 @@
+name: Hello World  # Can be anything 
+on: workflow_dispatch # Here when should the work flow get triggered, here workflow_dipatch is nothing but manually
+jobs:  # In a workflow, we can have multiple jobs, but here we will have only one
+  hello: # Here this is the name of the job, it can be again any random name
+    runs-on: ubuntu-latest # Now this above job is supposed to run on some image, or machine right?
+    steps:
+      - name: Hello Step  # Once again any random name, and what step should it run, will be in the next line
+        run: echo "Hello World" # So, here it will just echo/print out the statement thats it
+        
+      
