@@ -28,3 +28,25 @@ jobs:  # In a workflow, we can have multiple jobs, but here we will have only on
     steps:
       - name: Deploy
         run: echo "Deploy this application"
+
+# So, earlier we created 4 jobs, and we saw that all of them were running  parallerly right? So, what if, I want to build first, then test, and then deploy so, it should follow some specific flow right? So, we will configure that now:
+
+
+  job-5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: building phase
+        run: echo "Build first here"
+  job-6:
+    runs-on: ubuntu-latest
+    needs: job-5  # So, here as discussed earlier, we need some jobs to be done, before this job, so that we can see the sequential proper flow
+    steps:
+      - name: Unit testing phase
+        run: echo "Unit testing here"
+  job-7:
+    runs-on: ubuntu-latest
+    needs: job-6 # So, here as discussed earlier, we need some jobs to be done, before this job, so that we can see the sequential proper flow
+    steps:
+      - name: Deployment Phase
+        run: echo "Deployment here"
+  
