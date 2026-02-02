@@ -11,3 +11,20 @@ jobs:  # In a workflow, we can have multiple jobs, but here we will have only on
           echo "This is the first message of multiple command execution"
           echo "This is the second message of multiple command execution"
 
+  job-2: # Second job here
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build steps
+        run: echo "A sample demo build"
+
+  job-3: # Third job here
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Phase
+        run: echo "Just a test job"
+
+  job-4: # $th job here
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploy this application"
