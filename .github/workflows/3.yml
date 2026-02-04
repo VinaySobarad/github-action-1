@@ -6,3 +6,9 @@ jobs:
     steps:
       - name: Print variable
         run: echo "The variable value is, ${{ vars.MY_NAME }}"
+
+  print-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secret
+        run: echo "The secret value is, ${{ secrets.APP_PASSWORD }}"
