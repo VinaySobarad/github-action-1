@@ -1,0 +1,8 @@
+name: Different Ways to trigger a workflow
+on: push # Here the workflow will be triggered on every push event to the repository, and it will to be all branch, as the branch is not specified
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: echo "This workflow is triggered on push event"
