@@ -9,6 +9,11 @@ on:
     - 'feature/**' # Here the workflow will be triggered on every push event to the branches which are starting with feature/ of the repository
 # So, for the PR, lets see how to develop it, like we will raise a PR and then we will see that the workflow is getting triggered or not, and if it is getting triggered then we will see the logs of it as well, so lets do that now: 
   pull_request:
+    types: # Here we can specify the types of pull request events on which the workflow should be triggered
+      - opened
+      - assigned
+      - synchronize
+      - reopened  
     branches: 
     - main # Here the workflow will be triggered on every pull request event to the main branch of the repository 
     - dev # Here the workflow will be triggered on every pull request event to the dev branch of the repository
