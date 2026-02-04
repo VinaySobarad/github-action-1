@@ -1,0 +1,10 @@
+name: Printing variable name
+on: workflow_dispatch
+jobs:
+  print-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variable
+        run: |
+          echo "The variable value is, ${{ vars.MY_NAME }}"
+          echo "Jsut accessing variable, and multiple line execution"
