@@ -7,4 +7,4 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
       - name: Print index.html
-        run: cat index.html
+        run: cat 1.html
