@@ -1,0 +1,39 @@
+name: If - with -> adv example
+on: 
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
+
+jobs:
+  quality_checks:
+  # So, this needs to be added, only if the branch is starting/beginning with: feature, and is a push event
+    if: startsWith(github.ref_name, 'feature') && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step-1 - Perform code quality
+        run: echo "Running code quality test"
+
+  dev_deployment:
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'dev' && github.event_name == 'push'
+    steps:
+      - name: Step-2 - Dev Deployment 
+        run: echo "Deploying the code in Dev Environment"
+  
+  prod_deployment:
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'main' && github.event_name == 'push'
+    steps:
+      - name: Step-3 - Production Deployment
+        run: echo "Deploying the code in the Production Environment"
+
+  success_notify:
+    runs-on: ubuntu-latest
+    needs: ['quality_checks','dev_deployment', 'prod_deployment']
+    # SO, for any job, these are the following statuses: skipped, failure, success, cancelled
+    if: failure()   # alwasys means -> Run this job always with that, we use: not failure
+    steps:
+      - name: Step-4 - Notify failure
+        run: echo "Failure email sent to the team"
