@@ -14,4 +14,6 @@ jobs:
         run: echo "${{ toJson(github) }}"  # -> This prints entire context vars under github 
 
       - name: print the envs
-        run: printenv
+        run: |
+          printenv
+          echo "$GITHUB_SHA"  # -> The syntax is different when accessing the envs
