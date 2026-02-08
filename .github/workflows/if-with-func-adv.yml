@@ -15,7 +15,7 @@ jobs:
       - name: Step-1 - Perform code quality
         run: | 
           echo "Running code quality test"
-          exit 1 # -> This is for failure 
+          # exit 1 # -> This is for failure 
 
   dev_deployment:
     runs-on: ubuntu-latest
