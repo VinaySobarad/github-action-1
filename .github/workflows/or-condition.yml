@@ -12,7 +12,7 @@ jobs:
       - name: Step 1 - Run for the user - OR
         if: github.actor  == 'VinaySobarad' || github.actor == 'Shinee79'
         # if: github.ref == 'refs/heads/main' -> Even this can be used
-        run: echo "Running step-1, and triggered by -> $github.actor"
+        run: echo "Running step-1, and triggered by -> ${{github.actor}}"
       - name: Step 2
         run: echo "Running step-2"
   
