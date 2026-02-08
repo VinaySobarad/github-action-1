@@ -1,11 +1,11 @@
 name: Env vars demo
 on: workflow_dispatch
 env:
-  APP_ENV: "dev"  # envs can be configured at workflow level
+  APP_ENV: "DEV"  # envs can be configured at workflow level
 jobs:
   Env-demo:
     env: 
-      APP_ENV: "dev"  # envs can be configured at job level
+      APP_ENV: "UAT"  # envs can be configured at job level
     runs-on: ubuntu-latest
     steps:
       - name: Env thing here
