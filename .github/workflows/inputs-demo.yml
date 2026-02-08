@@ -5,12 +5,23 @@ on:
       environments:
         description: Choose the env
         required: true
-        default: dev
+        default: dev  # So, curretly it is a free open box, where u can input any env, like; test, testing ,etc...options:
+        # So, to have a fix list, for this, use: options - choice
+        type: choice
+        options:
+          - DEV
+          - UAT
+          - PROD
+
+      artifac_tag:
+        description: tag to be deployed
+        required: true
+        
   
 jobs:
   inputs_demo:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy th APP
-        run: echo "Deploying the app to ${{ inputs.environments }} "
+        run: echo "Deploying the ${{  inputs.artifac_tag  }} to ${{ inputs.environments }} "
   
