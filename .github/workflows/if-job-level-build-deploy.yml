@@ -1,0 +1,15 @@
+name: Build and Deploy
+# So, we want to trigger this whole workflow, for some events like: pull request or commits getting to the main branch
+
+on: 
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step-1 - Building step
+        run: echo "Buildig the application"
