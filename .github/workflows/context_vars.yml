@@ -1,0 +1,12 @@
+name: Context vars
+on: push
+jobs:
+  context-example:
+    runs-on: uubuntu-latest 
+    steps:
+      - name: context vars example
+        run: |
+          echo "This is triggered by ${{ github.actor }}"  # This gives you the user who triggered this workflow
+          echo "This repo is: ${{github.repository}}"
+          echo "This repo is owned by: ${{github.repository_owner}}"
+  
