@@ -1,0 +1,10 @@
+name: Env vars demo
+on: workflow_dispatch
+env:
+  APP_ENV: "dev"  # envs can be configured at workflow level
+jobs:
+  Env-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Env thing here
+        run: echo "App is connection to $APP_ENV"
