@@ -11,5 +11,5 @@ jobs:
           echo "This repo is owned by: ${{github.repository_owner}}"
           
       - name: print all the vars under github context vars
-        run: "${{ toJson(github) }}"  # -> This prints entire context vars under github 
+        run: echo "${{ toJson(github) }}"  # -> This prints entire context vars under github 
     
