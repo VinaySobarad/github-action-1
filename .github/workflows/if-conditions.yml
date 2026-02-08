@@ -1,0 +1,17 @@
+name: Conditions example
+on: 
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  demo-conditions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        if: github.ref_name == 'main' 
+        # if: github.ref == 'refs/heads/main' -> Even this can be used
+        run: echo "Running step-1"
+      - name: Step 2
+        run: echo "Running step-2"
+  
