@@ -19,4 +19,4 @@ jobs:
       - name: Github Action Demo
         uses: actions/checkout@v4
       - name: print the files
-        run: print 1.html
+        run: cat 1.html
