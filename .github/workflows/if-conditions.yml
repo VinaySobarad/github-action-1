@@ -1,9 +1,10 @@
 name: Conditions example
-on: 
-  push:
-    branches:
-      - main
-      - develop
+# on: 
+#   push:
+#     branches:
+#       - main
+#       - develop
+on: workflow_dispatch
 jobs:
   demo-conditions:
     runs-on: ubuntu-latest
