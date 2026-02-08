@@ -2,7 +2,7 @@
 # Using outputs we can share the data between tasks/steps
 # Sharing the data between the jobs
 name: Output example
-on: push
+on: workflow_dispatch
 jobs:
   output-example:
     outputs:
