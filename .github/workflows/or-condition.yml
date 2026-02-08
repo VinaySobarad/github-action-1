@@ -1,9 +1,9 @@
 name: Conditions example - OR
-on: 
-  push:
-    branches:
-      - main
-      - develop
+on:  workflow_dispatch
+  # push:
+  #   branches:
+  #     - main
+  #     - develop
 # on: workflow_dispatch
 jobs:
   demo-conditions:
