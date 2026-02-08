@@ -1,0 +1,15 @@
+# Outpus are the values returned by one task which is used by another task
+# Using outputs we can share the data between tasks/steps
+# Sharing the data between the jobs
+name: Output example
+on: push
+jobs:
+  output-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step one
+        id: step1 # We need to create an id, so that we can refer it, while we try to access the output
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT # To store this output, we use a special redirection to a special file in github actions that is: $GITHUB_OUTPUT.
+        # Sending this info to this file is stores as an output. So, I would like to use this thing in the next step
+      - name: Step two
+        run: echo "The version is: ${{ steps.step1.outputs.version }}"
