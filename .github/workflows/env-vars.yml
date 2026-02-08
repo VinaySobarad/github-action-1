@@ -5,8 +5,10 @@ env:
 jobs:
   Env-demo:
     env: 
-      APP_ENV: "UAT"  # envs can be configured at job level
+      APP_ENV: "UAT"  # envs can be configured at job level (Higher preference than the workflow level)
     runs-on: ubuntu-latest
     steps:
       - name: Env thing here
+        env:
+          APP_ENV: "PROD"
         run: echo "App is connection to $APP_ENV"
