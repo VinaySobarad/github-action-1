@@ -4,6 +4,8 @@ env:
   APP_ENV: "dev"  # envs can be configured at workflow level
 jobs:
   Env-demo:
+    env: 
+      APP_ENV: "dev"  # envs can be configured at job level
     runs-on: ubuntu-latest
     steps:
       - name: Env thing here
