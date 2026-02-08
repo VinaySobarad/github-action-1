@@ -2,7 +2,7 @@ name: Context vars
 on: push
 jobs:
   context-example:
-    runs-on: uubuntu-latest 
+    runs-on: ubuntu-latest 
     steps:
       - name: context vars example
         run: |
