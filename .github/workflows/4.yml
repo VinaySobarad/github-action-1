@@ -1,10 +1,22 @@
-name: Github Actions
+# name: Github Actions
+# on: push
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout the code
+#         uses: actions/checkout@v4
+#       - name: Print index.html
+#         run: cat 1.html
+
+
+name: Github Actions demo
 on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the code
+      - name: Github Action Demo
         uses: actions/checkout@v4
-      - name: Print index.html
-        run: cat 1.html
+      - name: print the files
+        run: print 1.html
