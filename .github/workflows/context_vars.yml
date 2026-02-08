@@ -1,5 +1,5 @@
 name: Context vars
-on: push
+on: workflow_dispatch
 jobs:
   context-example:
     runs-on: ubuntu-latest 
